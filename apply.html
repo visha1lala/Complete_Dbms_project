@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Form</title>
+    <style>
+        p:hover {
+            background-color: rgb(35, 67, 132);
+            color: white;
+        }
+        p {
+            padding: 3px 20px;
+            border-radius: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            height: 60px;
+            background-color: rgb(35, 67, 132);
+            color: white;
+            padding-top: 21px;
+            text-align: center;
+        }
+        .homebar {
+            background-color: #ffffff;
+            height: 28px;
+            word-spacing: 103px;
+            font-size: 17px;
+            padding-left: 117px;
+            padding-top: 7px;
+            position: sticky;
+            top: 0px;
+            box-shadow: 3px 0px 10px rgb(94, 93, 93);
+        }
+        .header2 {
+            text-align: center;
+            font-size: 35px;
+            background-color: rgb(111, 196, 50);
+            color: rgb(25, 9, 203);
+            height: 60px;
+            padding-top: 10px;
+        }
+        #form {
+            margin: auto;
+            width: 35%;
+            height: 80%;
+            padding: 35px;
+            border-radius: 15px;
+            background-color: rgb(161, 248, 247);
+            font-size: 18px;
+            box-shadow: 0px 0px 30px black;
+        }
+        .oyo {
+            text-align: center;
+        }
+        input[type=submit], input[type=reset] {
+            background-color: #52009a;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 12px 25px;
+            cursor: pointer;
+        }
+        #box {
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>IIITDM HEALTH AUTHORITY</h1>
+    </div>
+    <div class="homebar">
+        <nav>
+            <a href="home.html"><p>HOME</p></a>
+            <a href="about_us.html"><p>ABOUT_US</p></a>
+            <a href="findh.html"><p>FIND_HOSPITALS</p></a>
+        </nav>
+    </div>
+    <div class="header2">
+        <h2>Jan Aarogya Yojna</h2>
+    </div>
+    <form action="apply.php" method="post">
+        <table id="form">
+            <tr>
+                <td><label for="email">1) Enter email ID :</label></td>
+                <td><input type="email" id="box" name="email" required /></td>
+            </tr>
+            <tr>
+                <td><label for="adharno">2) Enter Aadhar no. :</label></td>
+                <td><input type="text" id="box" name="adharno" maxlength="12" /></td>
+            </tr>
+            <tr>
+                <td><label for="income">3) Enter Annual income:</label></td>
+                <td><input type="text" id="box" name="annualincome" maxlength="6" /></td>
+            </tr>
+            <tr>
+                <td><label for="way">4) Get your health card :</label></td>
+                <td>
+                    <select name="way" id="box">
+                        <option value="" disabled selected>select</option>
+                        <option value="nearest post">To the Nearest Post-office</option>
+                        <option value="nearest hospital">To the Nearest Hospital</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pwd">5) Enter password :</label></td>
+                <td><input type="password" name="password" id="box" maxlength="6"></td>
+            </tr>
+        </table>
+        <br>
+        <div class="oyo">
+            <label for="info">All the documents and information given by me are correct. I acknowledge that any discrepancy will reject my form.</label>
+            <input type="checkbox" id="info" name="details" required>
+        </div>
+        <br>
+        <div class="oyo">
+            <input type="submit" value="Submit" name="submit">
+            <input type="reset" value="Reset" name="reset">
+        </div>
+    </form>
+</body>
+</html>

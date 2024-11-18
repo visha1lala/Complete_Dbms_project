@@ -1,0 +1,184 @@
+Main task of website is to provide health card to needy poor ones:-
+Only Indians citizens with yealy family income less than 2 lacs are eligible to get health card
+# Steps to apply for health card(for users)
+ 1. Do your registration by filling registration form
+ 2. Apply for health card by filling application form
+ 3. Login and check the status of your health card
+   3.1 It will display " Please wait untill we review your health card " if user have registered
+       as well as applied but admin not reviewed his/her form yet.
+   3.2 It will disply  " Congratulation for getting health card " if admin accepted his application
+   3.3 It will display " Sorry, Your application is rejected " if admin rejected his application
+   3.4 If user entered invalid credentials or it have not registed/applied then it will display
+       "Invalid Credentials".
+
+ How Admin approved for health card
+ 1. Admin has to login to see the applications of applicants, those who have fill both registration
+    and application whose details will be visible to admin
+ 2. then admin accept or reject the health card approval
+ 3. Transfer Updates with his/her remarks
+
+Description of files
+
+ 1. Home.html--> this is the homepage of our website, here we have many options of User, Admin, about_us,
+                 find_hospitals, Am_i_eligible.
+                 User: this contains dropdown for user to apply for health card with three options
+                       of register, apply here and login
+                 Admin: Here only admin can login by entering its credentials and verify applications
+                        and transfer Updates
+                 About_us: It contains only photo gallary and some information
+                 Find_hospitals: It contains some information about hospitals.
+
+
+2. register.html--> Html registration form
+3. register.php --> After user fill registration form, then its data moved to register.php
+                    in which we insert registration form data to registrationDetails table
+                    in our db, with email as pk
+
+4. apply.html-----> Html form to apply after you register
+5. apply.php ------> Your data of application form moved to apply.php, where it will insert
+                     application form data to table ApplyDetails in our db with pk as password
+
+
+6. admin.html ------> Admin login html form
+7. verify.php  ----> Once admin he will we landed in verify.php, here admin can see all the
+                     applications details, After reviewing the details admin can transfer Update
+                     from the same page, he will enter email,status then remarks on a small 
+                     html form its data will be submitted to updates.php.
+
+8. updates.php--->  here data collected from transfer update form by admin is inserted in a table
+                    FinalUpdates in our db (email as pk)
+
+9. login.html---->  It is a html form, where once the user has registered as well as applied then
+                    he/she can check its status
+
+10.login.php-----> This is the final page which show result to user after he filled login form,
+                   data collected from login form is analysed here, if users email id and password
+                   are found in both tables then if its email is present in FinalUpdates then whatever
+                   the admin do its result is shown to user (accepted or rejected). if data not found 
+                   in FinalUpdates table then we display msg to user to wait.
+
+11. conn.php ----> this file is used to initially creating db in phpmyadmin and connect to the db.
+
+--> these are the admin login credentials
+      username:vishal_lala
+      password:lala@123
+
+--> Rdbms used is phpmyadmin by xampp, and we are using sql for as query language to perform 
+    crud operations on db
+
+--> for frontend we used html and css and for backend we used php and database used is sql
+    which is using rdbms as phpmyadmin by xampp.
+
+
+
+
+
+
+
+
+
+
+
+    This is the gpt Description of project
+
+    ### Health Card Management System  
+
+This website is designed to assist underprivileged Indian citizens by providing them with a health card. Only Indian citizens with a family income of less than ₹2,00,000 per annum are eligible to apply for the health card. Below is a detailed description of the website’s functionality and file structure.  
+
+---
+
+### **Main Features**  
+The primary purpose of this website is to streamline the process of applying for and distributing health cards to eligible individuals.  
+
+---
+
+### **Steps for Users to Apply for a Health Card**  
+
+1. **Registration**  
+   - Users must first register by filling out the **Registration Form**.  
+
+2. **Application Submission**  
+   - After registration, users need to fill the **Application Form** to apply for the health card.  
+
+3. **Login and Status Check**  
+   - Users can log in to check the status of their health card application.  
+   - Depending on the application review status:  
+     - If the application is still under review, the message **"Please wait until we review your health card"** will be displayed.  
+     - If approved, the message **"Congratulations for getting the health card"** will be displayed.  
+     - If rejected, the message **"Sorry, your application is rejected"** will be displayed.  
+     - If the user enters invalid credentials or has not registered/applied, the message **"Invalid Credentials"** will appear.  
+
+---
+
+### **Steps for Admin to Approve/Reject Applications**  
+
+1. **Login**  
+   - Admin logs in using the provided credentials to access the list of applications submitted by users.  
+
+2. **Review Applications**  
+   - Admin can view the details of users who have completed both registration and application.  
+
+3. **Approve or Reject Applications**  
+   - Admin can approve or reject the application and provide remarks using the **Transfer Update Form**.  
+
+---
+
+### **File Descriptions**  
+
+1. **`home.html`**  
+   - Serves as the homepage with various options:  
+     - **User:** Contains a dropdown menu for registration, application, and login.  
+     - **Admin:** Allows admin login to manage applications and transfer updates.  
+     - **About Us:** Displays a photo gallery and basic information about the system.  
+     - **Find Hospitals:** Provides information about hospitals.  
+     - **Am I Eligible?:** Displays eligibility criteria for the health card.  
+
+2. **`register.html`**  
+   - Contains the registration form for users to create an account.  
+
+3. **`register.php`**  
+   - Processes the registration form and stores the user details in the `registrationDetails` table (primary key: email).  
+
+4. **`apply.html`**  
+   - Provides the application form for users to apply for the health card.  
+
+5. **`apply.php`**  
+   - Processes the application form and stores the data in the `ApplyDetails` table (primary key: password).  
+
+6. **`admin.html`**  
+   - Admin login page for accessing and managing applications.  
+
+7. **`verify.php`**  
+   - Displays all user applications for the admin to review.  
+   - Contains the **Transfer Update Form** for the admin to approve or reject applications with remarks.  
+
+8. **`updates.php`**  
+   - Processes the data submitted through the **Transfer Update Form** and stores it in the `FinalUpdates` table (primary key: email).  
+
+9. **`login.html`**  
+   - Allows users to log in and check the status of their application.  
+
+10. **`login.php`**  
+    - Validates user login credentials and retrieves the application status.  
+    - Displays appropriate messages based on admin decisions or pending reviews.  
+
+11. **`conn.php`**  
+    - Handles the database connection and initial database creation using PHP and MySQL.  
+
+---
+
+### **Admin Login Credentials**  
+
+- **Username:** `vishal_lala`  
+- **Password:** `lala@123`  
+
+---
+
+### **Database Details**  
+
+- **RDBMS Used:** MySQL (via phpMyAdmin, using XAMPP).  
+- **Query Language:** SQL for performing CRUD operations on the database.  
+
+---
+
+This website ensures an efficient process for distributing health cards to those in need while providing the admin with tools to manage and review applications effectively.

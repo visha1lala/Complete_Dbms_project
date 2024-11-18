@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+<style>
+
+       p:hover{
+        background-color: rgb(35, 67, 132);
+        color:white;
+
+
+       }
+
+       p{
+            
+        padding:3px 20px;
+        border-radius: 10px;
+       }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            height:60px;
+            background-color: rgb(35, 67, 132);
+            color:white;
+            padding-top:21px;
+            padding-bottom:4px;
+            text-align: center;
+            background-image:url("logo.png");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size:80px 80px;
+        }
+        p{
+            display:inline-block;
+        }
+        .homebar{
+            background-color: #ffffff;
+            height:28px;
+            word-spacing: 103px;
+            font-size: 17px;
+            padding-left: 117px;
+            padding-top:7px;
+            position:sticky;
+            top:0px;
+            box-shadow: 3px 0px 10px rgb(94, 93, 93);
+        }
+        .header2{
+            /*color: white;*/
+            
+            text-align: center;
+            font-size: 35px;
+            background-color: rgb(111, 196, 50);
+            color:rgb(25, 9, 203);
+            height:60px;
+            padding-top:10px;
+            word-spacing: 18px;
+            background-image:url("wnload.jpg");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size:80px 80px;
+        }
+        .login{
+            display:inline-block;
+            width:20%;
+            height: 60%;
+            padding-left:100px;
+           
+            padding-top: 60px;
+            padding-bottom: 60px;
+            background-color: rgb(161, 248, 247);
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px black;
+            position: relative;
+            align-items: center;
+            top: 85px;
+           
+        }
+        input[type=submit]{
+          background-color: #52009a;
+          border: none;
+          border-radius: 10px;;
+          color: white;
+          padding: 12px 25px;
+          text-decoration: none;
+          margin: 1px 1px;
+          cursor: pointer;
+        }
+        input[type=reset]{
+            background-color: #52009a;
+          border: none;
+          border-radius: 10px;;
+          color: white;
+          padding: 12px 25px;
+          text-decoration: none;
+          margin: 1px 1px;
+          cursor: pointer;}
+        
+    
+        #box{
+            width: 200px;
+            height: 35px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .docenter{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>
+                IIITDM HEALTH AUTHORITY
+                </h1>
+            </div>
+            <div class="homebar">
+                <a href="home.html"> <p>HOME</p></a>
+                <a href="about_us.html"> <p>ABOUT_US</p></a>
+            
+                <a href="findh.html"> <p>FIND_HOSPITALS</p></a>
+                
+            </div>
+            <div class="header2">
+                <h2>Jan Aarogya Yojna</h2>
+            </div>
+            <TABLE  bgcolor="orange" cellpadding=5 cellspacing=5 width=100% height=15%>
+                <TR>
+                    <TH>
+    
+                        <marquee  direction="left" scrollamount="15">Enter Your Annual Income and Country to know that you are eligible for this scheme or not.</marquee>
+                    </TH>
+                </TR>
+            </TABLE>
+               <div class="docenter">
+                <div class="login">   
+        
+        <table align="center">
+            <th>
+        <h1>Am I Eligible ? </h1>
+    
+        <p> </p>
+        
+        <form method="post" action="eligible.php">
+          <lable for "income">Annual Income :</lable><br>
+          <input type="text" id="box" name="amount"><br>
+          
+          <label for="country">Country:</label><br>
+          <input type="text" id="box" name="country" /><br>
+          
+          <input type="submit" value="Submit" >
+          <input type="reset" value="reset">
+        </form></div>
+        </div>
+    </th>
+
+    </table>
+    
+        </body>
+        </html>
+        
