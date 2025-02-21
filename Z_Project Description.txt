@@ -182,3 +182,39 @@ The primary purpose of this website is to streamline the process of applying for
 ---
 
 This website ensures an efficient process for distributing health cards to those in need while providing the admin with tools to manage and review applications effectively.
+
+
+
+
+Queries to create db and tables
+
+CREATE DATABASE mydb;
+
+USE mydb;
+
+CREATE TABLE registrationDetails (
+    name VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    email VARCHAR(255) PRIMARY KEY,
+    gender VARCHAR(50) NOT NULL,
+    address TEXT NOT NULL,
+    pincode VARCHAR(10) NOT NULL,
+    mobile VARCHAR(15) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE ApplyDetails (
+    email VARCHAR(255) NOT NULL,
+    adharno VARCHAR(12) NOT NULL,
+    annualinc INT NOT NULL,
+    getwhere VARCHAR(50) NOT NULL,
+    password VARCHAR(255) PRIMARY KEY,
+    FOREIGN KEY (email) REFERENCES registrationDetails(email)
+);
+
+CREATE TABLE FinalUpdates (
+    email VARCHAR(255) PRIMARY KEY,
+    status BOOLEAN NOT NULL,
+    remarks TEXT NOT NULL,
+    FOREIGN KEY (email) REFERENCES registrationDetails(email)
+);
